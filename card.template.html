@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-control" content="no-cache">
+<meta http-equiv="Cache-control" content="no-store">
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="qrcode.js"></script>
+<style>
+body {font-family: Lato;}
+
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 0px solid #ccc;
+    background-color: #bebebe;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ff309e;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+</style>
+<title>This is Medical Information for MC_PATIENT_NUM ...</title>
+</head>
+
+<body>
+
+<p>Patient <b>(MC_PATIENT_NUM)</b> info folows (MC_PATIENT_PHONE):</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Immunization')" id="defaultOpen">Immunization</button>
+  <button class="tablinks" onclick="openCity(event, 'Screening / Testing')">Screening / Testing</button>
+  <button class="tablinks" onclick="openCity(event, 'Treatments')">Treatments</button>
+  <button class="tablinks" onclick="openCity(event, 'Notes')">Notes</button>
+</div>
+
+<div id="Immunization" class="tabcontent">
+    <p><div id="Immunizationcode"></div>
+        MC_IMMUNIZATION
+</div>
+
+<div id="Screening / Testing" class="tabcontent">
+    <p><div id="Testingcode"></div>
+        MC_TESTING
+</div>
+
+<div id="Treatments" class="tabcontent">
+    <p><div id="Treatementcode"></div>
+        MC_TREATMENT
+</div>
+
+<div id="Notes" class="tabcontent">
+    <p><div id="Notecode"></div>
+        MC_NOTES
+</div>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+</script>
+<p>MC_FOOTER
+</body>
+</html>
+
