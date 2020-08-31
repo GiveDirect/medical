@@ -22,13 +22,13 @@ OK = {'success':'true','message':'The Command Completed Successfully'};
 myjson = json.load(sys.stdin)
 
 endpt = "https://docs.google.com/forms/d/e/1FAIpQLSfUwugrsJl2_eEnz7rV_E3QEsX1YCNbpAHFPV17oyg66y47wA/formResponse?usp=pp_url&" 
-parms = {'entry.4151265': str(myjson['Patient_Number']).replace(" ",", "), 
-         'entry.1319736686': str(myjson['Immunizations_Performed']).replace(" ",", "), 
-         'entry.236690816': str(myjson['Screening_Testing']).replace(" ",", "), 
-         'entry.1381571885': str(myjson['Treatments_Performed']).replace(" ",", "),
-         'entry.1937888729': str(myjson['Treatment_Notes']),         
-         'entry.1751984836': str(myjson['Education_Discussed']).replace(" ",", "), 
-         'entry.2056706490': str(myjson['General_Notes'])} 
+parms = {'entry.4151265': str(myjson.get('Patient_Number','no-change')).replace(" ",", "), 
+         'entry.1319736686': str(myjson.get('Immunizations_Performed','no-change')).replace(" ",", "), 
+         'entry.236690816': str(myjson.get('Screening_Testing','no-change')).replace(" ",", "), 
+         'entry.1381571885': str(myjson.get('Treatments_Performed','no-change')).replace(" ",", "),
+         'entry.1937888729': str(myjson.get('Treatment_Notes',"no-change")),         
+         'entry.1751984836': str(myjson.get('Education_Discussed','no-change')).replace(" ",", "), 
+         'entry.2056706490': str(myjson.get('General_Notes',"no-change"))} 
  
 sp = subprocess.run(["/usr/bin/curl","-s","-o","/dev/null","-w","%{http_code}", endpt + urllib.parse.urlencode(parms)], universal_newlines=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
