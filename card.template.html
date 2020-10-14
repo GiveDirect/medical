@@ -35,29 +35,85 @@ body {font-family: Lato;}
 
 /* Create an active/current tablink class */
 .tab button.active {
-    background-color: #ff309e;
+    background-color: #a382fb;
 }
 
 /* Style the tab content */
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
     border-top: none;
 }
+
+td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+}
+
+th.noteh {
+  width:220px;
+  color:black;
+  background-color:#a382fb;
+}
+
+th.ctrh {
+  text-align: left;
+  width:220px;
+  color:black;
+  background-color:#a382fb;
+}
+
+th.ctr1 {
+  text-align: center;
+  width:120px;
+  color:black;
+  background-color:#a382fb;
+}
+
+th.imm {
+  text-align: center;
+  width:120px;
+  color:black;
+  background-color:#a382fb;
+}
+
+th.vitals {
+  text-align: center;
+  width:60px;
+  color:black;
+  background-color:#a382fb;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+td {
+  text-align:center;
+}
+
 </style>
 <title>This is Medical Information for MC_PATIENT_NUM ...</title>
 </head>
 
 <body>
-
-<p>Patient <b>(MC_PATIENT_NUM)</b> info folows (MC_PATIENT_PHONE):</p>
+<h3>GiveDirect Patient Card System (PCS)</h3>
+<p><b>Patient:</b> MC_PATIENT_NUM 
+<br><b>Emer. Contact Phone:</b> MC_PATIENT_PHONE </p>
 
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Immunization')" id="defaultOpen">Immunization</button>
-  <button class="tablinks" onclick="openCity(event, 'Screening / Testing')">Screening / Testing</button>
-  <button class="tablinks" onclick="openCity(event, 'Treatments')">Treatments</button>
+  <button class="tablinks" onclick="openCity(event, 'Vitals')" id="defaultOpen">Vitals</button>
+  <button class="tablinks" onclick="openCity(event, 'Immunization')">Immunization</button>
+  <button class="tablinks" onclick="openCity(event, 'Screening / Testing / Treatments / Referral')">Screening / Testing / Treatments / Referral</button>
   <button class="tablinks" onclick="openCity(event, 'Notes')">Notes</button>
+</div>
+
+<div id="Vitals" class="tabcontent">
+    <p><div id="Vitalscode"></div>
+        MC_VITALS
 </div>
 
 <div id="Immunization" class="tabcontent">
@@ -65,14 +121,9 @@ body {font-family: Lato;}
         MC_IMMUNIZATION
 </div>
 
-<div id="Screening / Testing" class="tabcontent">
-    <p><div id="Testingcode"></div>
-        MC_TESTING
-</div>
-
-<div id="Treatments" class="tabcontent">
-    <p><div id="Treatementcode"></div>
-        MC_TREATMENT
+<div id="Screening / Testing / Treatments / Referral" class="tabcontent">
+    <p><div id="CTRcode"></div>
+        MC_CTR
 </div>
 
 <div id="Notes" class="tabcontent">
