@@ -1,10 +1,49 @@
-
-
 Overview: 
 
 ===================
-File: 
-Desc: 
+File: save-medical-data.py
+Host: GiveDirect.io server
+Desc: REST Interface file that takes JSON from Kobo Toolbox Patient Action Survey (PAS) and posts cleaned data to a Google Form, 
+that stores the responses in the Medical Record System (MRS) for human processing and medical audits.
+
+# REST fields from Kobo
+# 
+# Patient_Number
+# Vitals_Group
+# Immunizations_Group
+# Check_Treat_Refer_Group
+# General_Notes
+# 
+# Ignore: _Treatment (4); Services_ (8); gathered (11)
+===================
+
+===================
+File: make-medical-card.py
+Host: GiveDirect.io server
+Desc: Patient Card System (PCS) pretty prints Medical Record System (MRS) data for medical profesionals in the field.
+===================
+
+===================
+File: card.template.html
+Host: GiveDirect.io server
+Desc: Patient Card System (PCS) JS style and templace for pretty printing Medical Record System (MRS) data for medical 
+profesionals in the field.
+===================
+
+===================
+File: gdmt-whatsapp-button2.png
+Host: GiveDirect.io server
+Desc: Image used in the Medical Record System (MRS) that needs to be hosted.
+===================
+
+===================
+File: Mobile Clinic Records V2
+Host: Google user mygivedirect@gmail.com
+Desc: Medical Record System (MRS) data sink for PCS and PAS; interface for ground check-in user and and medical professionals
+
+# This Sheet has a script associated with it "Tools" -> "SCript" file macros.gs
+#
+# Sheets and script under Google Version control (same named tags)
 ===================
 
 Question in discord... 
