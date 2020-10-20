@@ -13,7 +13,8 @@ that stores the responses in the Medical Record System (MRS) for human processin
 # Immunizations_Group
 # Check_Treat_Refer_Group
 # General_Notes
-# 
+# Prescribed
+#
 # Ignore: _Treatment (4); Services_ (8); gathered (11)
 ===================
 
