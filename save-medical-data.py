@@ -18,7 +18,7 @@ myjson = json.dumps(myjson, indent=4, sort_keys=False)
 # Delete these!
 myjson = re.sub(r'\"[A-Z].*/', '"', myjson)
 myjson = re.sub(r'\"Services_.*([\n]+)', '', myjson)
-myjson = re.sub(r'.*false\",([\n]+)', '', myjson)
+myjson = re.sub(r'.*false\",?([\n]+)', '', myjson)
 myjson = re.sub(r'.*gathered.*([\n])+', '', myjson)
 myjson = re.sub(r'",', '', myjson)
 
